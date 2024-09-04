@@ -1,6 +1,9 @@
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
+from datetime import timezone
 
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
+
+from .forms import PostForm
 from .models import Post
 # Create your views here.
 
@@ -11,8 +14,18 @@ def posts(request):
 
 @login_required
 def upload_post(request):
-    pass
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.save()
+            return redirect('posts')
+    else:
+        form = PostForm()
+    return render(request, 'posts/upload_post.html', {'form': form})
 
 @login_required
 def post_detail(request, post_id):
-    pass
+    post = Post.objects.get(pk=post_id)
+    return render(request, 'posts/post_detail.html', {'post': post})

@@ -10,11 +10,13 @@
 
 {% block content %}
     <a href="{% url "logout" %}">logout</a>
-    <h1>Welcome to Posts</h1>
+    <h1>Welcome @{{ user.username }}</h1>
+    <a href="{% url 'upload_post' %}">Upload post</a>
     <div id="posts">
         {% for post in posts %}
+            <hr/>
             <p class="username">{{ post.user.username }}</p>
-            <img src="{{ post.image.url }}" alt="post image" style="height: 500px; width: 500px;">
+            <a href="{% url 'post_detail' post.id %}"><img src="{{ post.image.url }}" alt="post image" style="height: 500px; width: 500px;"></a>
             <p class="caption" >{{ post.caption }}</p>
         {% endfor %}
     </div>

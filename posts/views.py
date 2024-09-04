@@ -10,5 +10,9 @@ def posts(request):
     return render(request, 'posts/posts.html', {'posts': posts})
 
 @login_required
+def upload_post(request):
+    pass
+
+@login_required
 def post_detail(request, post_id):
     pass

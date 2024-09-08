@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    font-size: 1rem;
+}
+
+#navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navbar div {
+    display: flex;
+    width: 30%;
+    margin: 20px 50px;
+}
+
+#navbar h1 {
+    font-family: "Playwrite CU", cursive;
+    font-size: 1.7rem;
+    font-weight: 400;
+}
+
+#navbar .navigation {
+    justify-content: center;
+    align-items: center;
+}
+
+#navbar .navigation a {
+    margin: 0 30px;
+    text-decoration: none;
+    color: inherit;
+}
+
+#navbar .user {
+    justify-content: right;
+    align-items: center
+}
+
+#navbar .user img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+#navbar .user a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+}
+
+

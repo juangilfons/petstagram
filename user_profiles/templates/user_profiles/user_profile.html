@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block css_files %}
+{% endblock %}
+
+{% block content %}
+    <a href="{% url "logout" %}">logout</a>
+    <h1>{{ user.username }}'s profile</h1>
+    <img src="{{ user.userprofile.profile_picture.url }}" alt="" style="height: 200px; width: 200px; border-radius: 50% ; ">
+    <p>{{ user.userprofile.bio }}</p>
+{% endblock %}

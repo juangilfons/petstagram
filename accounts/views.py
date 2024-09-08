@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import logout
 
 from accounts.forms import RegisterForm
+
+from user_profiles.models import UserProfile
 
 
 # Create your views here.
@@ -14,8 +16,10 @@ def register_user(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('login')
+            user = form.save()
+            UserProfile.objects.create(user=user)
+            login(request, user)
+            return redirect('posts')
 
     else:
         form = RegisterForm()

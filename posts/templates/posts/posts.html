@@ -1,23 +1,32 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
     Posts
 {% endblock %}
 
 {% block css_files %}
-
+    <link rel="stylesheet" href="{% static 'posts/style.css' %}">
 {% endblock %}
 
 {% block content %}
-    <a href="{% url "logout" %}">logout</a>
-    <h1>Welcome @{{ user.username }}</h1>
-    <a href="{% url 'upload_post' %}">Upload post</a>
-    <div id="posts">
+    <ul id="posts">
         {% for post in posts %}
-            <hr/>
-            <p class="username">{{ post.user.username }}</p>
-            <a href="{% url 'post_detail' post.id %}"><img src="{{ post.image.url }}" alt="post image" style="height: 500px; width: 500px;"></a>
-            <p class="caption" >{{ post.caption }}</p>
+            <li class="post">
+                <a href="{% url 'post_detail' post.id %}"><img src="{{ post.image.url }}" alt="post image" style="height: 500px; width: 500px;"></a>
+                <div class="post-footer">
+                    <div class="user">
+                        <img class="user-pic" src="{{ post.user.userprofile.profile_picture.url }}" alt="">
+                        <div class="text">
+                            <a class="user-name" href="{% url 'user_profile' post.user.pk %}">{{ post.user.username }}</a>
+                            <p class="post-time">{{ post.time_since_post }}</p>
+                        </div>
+                    </div>
+                    <div class="actions">
+
+                    </div>
+                </div>
+            </li>
         {% endfor %}
-    </div>
+    </ul>
 {% endblock %}

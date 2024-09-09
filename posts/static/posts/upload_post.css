@@ -1,0 +1,93 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    max-width: 800px;
+    width: 90%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container h1 {
+    margin-bottom: 50px;
+}
+
+.container form {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container label {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+
+.container input[type="file"] {
+    display: none;
+}
+
+.container .image #drop-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 500px;
+    border-radius: 20px;
+    background: rgb(230, 230, 230);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.container .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.container textarea {
+    margin-bottom: 55px;
+    display: block;
+    width: 500px;
+    resize: none;
+    border: none;
+    border-radius: 10px;
+    height: 75px;
+    background-color: rgb(230, 230, 230);
+    font-size: 1rem;
+    padding: 10px;
+}
+
+.container button {
+    width: 500px;
+    height: 60px;
+    border-style: none;
+    border-radius: 10px;
+    background-color: #267DFF;
+    font-size: 1.1rem;
+    color: white;
+    transition: all 0.1s;
+}
+
+.container button:hover {
+    background-color: #458dff;
+}
+
+.container button:active {
+    transform: scale(0.98);
+}
+
+
+

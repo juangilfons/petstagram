@@ -1,18 +1,29 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
     Upload post
 {% endblock %}
 
 {% block css_files %}
-
+    <link rel="stylesheet" href="{% static 'posts/upload_post.css' %}">
 {% endblock %}
 
 {% block content %}
-    <h1>Upload Post</h1>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Upload</button>
-    </form>
+    <div class="container">
+        <h1>Upload Post</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="image">
+                <label id="drop-area" for="{{ form.image.id_for_label }}">{{ form.image.label_tag|cut:":" }}</label>
+                {{ form.image }}
+            </div>
+            <div class="caption">
+                {{ form.caption.label_tag }}
+                {{ form.caption }}
+            </div>
+            <button type="submit">Upload post</button>
+        </form>
+    </div>
+    <script src="{% static 'posts/script.js' %}"></script>
 {% endblock %}

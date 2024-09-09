@@ -9,7 +9,7 @@ from .models import Post
 
 @login_required
 def posts(request):
-    posts = Post.objects.all()
+    posts = Post.objects.all().order_by('-created_at')
     return render(request, 'posts/posts.html', {'posts': posts})
 
 @login_required

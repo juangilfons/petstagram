@@ -14,13 +14,18 @@ p {
     font-size: 1rem;
 }
 
+
 #navbar {
     width: 100%;
+    position: fixed;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(30px)
 }
-
 #navbar div {
     display: flex;
     width: 30%;
@@ -31,6 +36,11 @@ p {
     font-family: "Playwrite CU", cursive;
     font-size: 1.7rem;
     font-weight: 400;
+    color: black;
+}
+
+#navbar .logo {
+    text-decoration: none;
 }
 
 #navbar .navigation {
@@ -44,22 +54,48 @@ p {
     color: inherit;
 }
 
+#navbar .bi-plus-square, .bi-plus-square-fill {
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 2rem;
+    -webkit-text-stroke: 0.03rem black;
+    transition: background-color 0.3s ease;
+}
+
+#navbar .bi-house-door, .bi-house-door-fill {
+    padding: 7px 12px;
+    border-radius: 15px;
+    font-size: 2.3rem;
+    -webkit-text-stroke: 0.01rem black;
+    transition: background-color 0.3s ease;
+
+}
+
+#navbar .bi-plus-square:hover, .bi-plus-square-fill:hover, .bi-house-door:hover, .bi-house-door-fill:hover {
+    background-color: rgba(230, 230, 230, 0.7);
+}
+
 #navbar .user {
     justify-content: right;
-    align-items: center
 }
 
 #navbar .user img {
-    height: 35px;
-    width: 35px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 #navbar .user a {
     text-decoration: none;
     color: inherit;
     font-weight: 600;
+    align-items: center;
+    display: flex;
+}
+
+main {
+    margin-top: 150px;
 }
 
 

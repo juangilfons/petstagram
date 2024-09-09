@@ -9,7 +9,7 @@
 
 {% block content %}
     <a href="{% url "logout" %}">logout</a>
-    <h1>{{ user.username }}'s profile</h1>
-    <img src="{{ user.userprofile.profile_picture.url }}" alt="" style="height: 200px; width: 200px; border-radius: 50% ; ">
-    <p>{{ user.userprofile.bio }}</p>
+    <h1>{{ user_profile.username }}'s profile</h1>
+    <img src="{{ user_profile.userprofile.profile_picture.url }}" alt="" style="height: 200px; width: 200px; border-radius: 50% ; ">
+    <p>{{ user_profile.userprofile.bio }}</p>
 {% endblock %}

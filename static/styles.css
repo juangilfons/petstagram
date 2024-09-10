@@ -23,6 +23,7 @@ p {
 
 #navbar {
     width: 100%;
+    max-height: 100px;
     position: fixed;
     top: 0;
     display: flex;
@@ -84,6 +85,7 @@ p {
 
 #navbar .user {
     justify-content: right;
+    position: relative;
 }
 
 #navbar .user img {
@@ -91,6 +93,10 @@ p {
     width: 40px;
     border-radius: 50%;
     margin: 0 15px;
+}
+
+#navbar .user-element {
+    pointer-events: none;
 }
 
 #navbar .user a {
@@ -104,5 +110,47 @@ p {
 main {
     margin-top: 150px;
 }
+
+#navbar .dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+}
+
+#navbar .dropdown-content {
+    display: block;
+    position: absolute;
+    right: -25%;
+    top: calc(100% + .10rem);
+    width: 135px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 150ms ease-in-out;
+}
+
+#navbar .dropdown.active > .drop + .dropdown-content {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#navbar .dropdown-content a {
+    padding: 1rem;
+    border-radius: 15px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#navbar .dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+
+
+
+
+
+
 
 

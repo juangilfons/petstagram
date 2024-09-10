@@ -31,15 +31,22 @@
             </a>
         </div>
         <div class="user">
-            <a href="{% url 'user_profile' user.pk %}">
-                <img src="{{ user.userprofile.profile_picture.url }}" alt="">
-                <p>{{ user.username }}</p>
-            </a>
+            <div class="dropdown" data-dropdown>
+                <a class="drop" href="javascript:void(0)" data-dropdown-button>
+                    <img src="{{ user.userprofile.profile_picture.url }}" alt="" class="user-element">
+                    <p class="user-element">{{ user.username }}</p>
+                </a>
+                <div class="dropdown-content">
+                    <a href="{% url 'user_profile' user.username %}" class="view-profile">View profile</a>
+                    <a href="{% url 'logout' %}">Logout</a>
+                </div>
+            </div>
         </div>
     </nav>
     <main>
         {% block content %}
         {% endblock %}
     </main>
+    <script src="{% static 'script.js' %}"></script>
 </body>
 </html>

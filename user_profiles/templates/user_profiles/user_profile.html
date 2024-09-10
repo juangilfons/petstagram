@@ -1,15 +1,32 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
     Profile
 {% endblock %}
 
 {% block css_files %}
+    <link rel="stylesheet" href="{% static 'user_profiles/user_profile.css' %}">
 {% endblock %}
 
 {% block content %}
-    <a href="{% url "logout" %}">logout</a>
-    <h1>{{ user_profile.username }}'s profile</h1>
-    <img src="{{ user_profile.userprofile.profile_picture.url }}" alt="" style="height: 200px; width: 200px; border-radius: 50% ; ">
-    <p>{{ user_profile.userprofile.bio }}</p>
+    <section id="user-container">
+        <div class="container">
+            <img src="{{ user_profile.userprofile.profile_picture.url }}" alt="" class="profile-pic">
+            <div class="profile-info">
+                <div class="profile-heading">
+                    <h1 class="user-name">@{{ user_profile.username }}</h1>
+                    {% if user.id == user_profile.id %}
+                        <a class="profile-edit" href="javascript:void(0)">Edit Profile</a>
+                    {% endif %}
+                </div>
+{#                <p class="bio">{{ user_profile.userprofile.bio }}</p>#}
+            </div>
+        </div>
+    </section>
+    <section id="user-posts">
+        {% for post in user_posts %}
+            <img src="{{ post.image.url }}" alt="">
+        {% endfor %}
+    </section>    
 {% endblock %}

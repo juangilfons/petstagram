@@ -89,5 +89,29 @@ main {
     transform: scale(0.98);
 }
 
+.alert {
+    background-color: #f8d7da; /* Light red background */
+    color: #721c24; /* Dark red text */
+    border-left: 4px solid #f5c6cb; /* Red left border for emphasis */
+    padding: 10px 15px; /* Padding around the text */
+    border-radius: 5px; /* Slightly rounded corners */
+    margin-bottom: 30px; /* Margin to separate from other content */
+    font-size: 1.3rem; /* Slightly smaller font size */
+}
+
+.alert .close {
+    color: #721c24;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.alert .close:hover {
+    opacity: 1;
+}
+
 
 

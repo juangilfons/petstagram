@@ -13,12 +13,14 @@
     <ul id="posts">
         {% for post in posts %}
             <li class="post">
-                <img class="post-image" src="{{ post.image.url }}" alt="post image">
+                <div class="image-container">
+                    <img class="post-image" src="{{ post.image.url }}" alt="post image">
+                </div>
                 <div class="post-footer">
                     <div class="user">
                         <img class="user-pic" src="{{ post.user.userprofile.profile_picture.url }}" alt="">
                         <div class="text">
-                            <a class="user-name" href="{% url 'user_profile' post.user.pk %}">{{ post.user.username }}</a>
+                            <a class="user-name" href="{% url 'user_profile' post.user.username %}">{{ post.user.username }}</a>
                             <p class="post-time">{{ post.time_since_post }}</p>
                         </div>
                     </div>
@@ -27,7 +29,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
                             <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
                         </svg>
-                        </a>    
+                        </a>
                     </div>
                 </div>
             </li>

@@ -17,7 +17,7 @@
                 <div class="profile-heading">
                     <h1 class="user-name">@{{ user_profile.username }}</h1>
                     {% if user.id == user_profile.id %}
-                        <a class="profile-edit" href="javascript:void(0)">Edit Profile</a>
+                        <a class="profile-edit" href="{% url 'edit_profile' %}">Edit Profile</a>
                     {% endif %}
                 </div>
 {#                <p class="bio">{{ user_profile.userprofile.bio }}</p>#}

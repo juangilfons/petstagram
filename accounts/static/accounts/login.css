@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #292d34;
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+}
+
+p {
+    font-size: 1rem;
+}
+
+h1 {
+    font-family: "Playwrite CU", cursive;
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: #292d34;
+}
+

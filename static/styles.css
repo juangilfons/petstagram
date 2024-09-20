@@ -118,7 +118,7 @@ main {
 }
 
 #navbar .dropdown-content {
-    display: block;
+    display: none;
     position: absolute;
     right: -25%;
     top: calc(100% + .10rem);
@@ -132,6 +132,7 @@ main {
 }
 
 #navbar .dropdown.active > .drop + .dropdown-content {
+    display: block;
     opacity: 1;
     pointer-events: auto;
 }

@@ -8,22 +8,96 @@
     color: #292d34;
 }
 
-html {
+html, body {
+    height: 100%;
     font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 body {
-    min-height: 100vh;
+    background-color: #f4f4f4;
 }
 
-p {
-    font-size: 1rem;
+.container {
+    background-color: #ffffff;
+    padding: 4rem 5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
 }
 
 h1 {
     font-family: "Playwrite CU", cursive;
-    font-size: 1.7rem;
+    font-size: 2rem;
     font-weight: 400;
     color: #292d34;
+    margin-bottom: 1.5rem;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+
+input {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+button {
+    margin-top: 1.5rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    background-color: #267DFF;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #458dff;
+}
+
+p {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+}
+
+p a {
+    color: #267DFF;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+.errorlist {
+    list-style-type: none;
+    background-color: #f8d7da; /* Light red background */
+    border-left: 4px solid #f5c6cb; /* Red left border for emphasis */
+    padding: 10px 15px; /* Padding around the text */
+    border-radius: 5px; /* Slightly rounded corners */
+    margin-bottom: 30px; /* Margin to separate from other content */
+    font-size: 1.1rem; /* Slightly smaller font size */
+}
+
+li {
+    color: #721c24; /* Dark red text */
+}

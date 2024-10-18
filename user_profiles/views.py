@@ -24,3 +24,5 @@ def edit_profile(request):
         form = UserProfileForm(instance=profile)
 
     return render(request, 'user_profiles/edit_profile.html', {'form': form})
+
+

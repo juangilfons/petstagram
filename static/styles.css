@@ -20,6 +20,9 @@ p {
     font-size: 1rem;
 }
 
+b {
+    font-weight: 600;
+}
 
 #navbar {
     width: 100%;

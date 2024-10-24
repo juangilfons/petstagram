@@ -40,8 +40,3 @@ def upload_post(request):
     else:
         form = PostForm()
     return render(request, 'posts/upload_post.html', {'form': form})
-
-@login_required
-def post_detail(request, post_id):
-    post = Post.objects.get(pk=post_id)
-    return render(request, 'posts/post_detail.html', {'post': post})

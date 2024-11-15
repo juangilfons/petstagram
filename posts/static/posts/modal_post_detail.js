@@ -2,13 +2,14 @@
 var modal = document.getElementById("postModal");
 var span = document.getElementsByClassName("close")[0];
 
-function openModal(imageSrc, caption, username, profilePicUrl, postTime) {
+function openModal(postId ,imageSrc, caption, username, profilePicUrl, postTime, currentUser) {
     var modal = document.getElementById("postModal"); // Ensure this ID matches your modal's ID
     var modalImage = document.getElementById("modalImage");
     var modalCaption = document.getElementById("modalCaption");
     var modalUsername = document.getElementById("modalUsername");
     var modalProfilePic = document.getElementById("modalProfilePic");
     var modalPostTime = document.getElementById("modalPostTime");
+    var modalDeleteBtn = document.getElementById("deleteForm");
 
     if (modal && modalImage && modalCaption) {
         modal.style.display = "block"; // Show the modal
@@ -17,6 +18,11 @@ function openModal(imageSrc, caption, username, profilePicUrl, postTime) {
         modalUsername.innerText = username;
         modalProfilePic.src = profilePicUrl;
         modalPostTime.innerText = postTime;
+
+        if (currentUser === username) {
+            modalDeleteBtn.style.display = "block";
+            modalDeleteBtn.action = `/delete/${postId}/`
+        }
 
         document.body.style.overflow = 'hidden';  // Disable scrolling
         document.body.style.backgroundColor = 'lightgray'
@@ -32,6 +38,7 @@ span.onclick = function() {
     document.body.style.overflow = 'auto';
     document.body.style.backgroundColor = 'white'
     document.getElementById('navbar').style.backgroundColor = 'rgba(255, 255, 255, 0.6)';
+    document.getElementById("deleteForm").style.display = 'none';
 }
 
 // Close the modal when clicking outside of it
@@ -41,5 +48,14 @@ window.onclick = function(event) {
         document.body.style.overflow = 'auto';
         document.body.style.backgroundColor = 'white'
         document.getElementById('navbar').style.backgroundColor = 'rgba(255, 255, 255, 0.6)';
+        document.getElementById("deleteForm").style.display = 'none';
+    }
+}
+
+function confirmDelete(event) {
+    event.preventDefault();
+    if (confirm("Are you sure you want to delete this post?")) {
+        const form = document.getElementById("deleteForm");
+        form.submit();
     }
 }

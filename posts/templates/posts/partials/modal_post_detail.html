@@ -6,11 +6,17 @@
         </div>
         <div class="details-section">
             <div class="user">
-                <img id="modalProfilePic" class="user-pic" src="" alt="">
-                <div class="text">
-                    <a id="modalUsername" class="user-name" href=""></a>
-                    <p id="modalPostTime" class="post-time"></p>
+                <div class="post-info">
+                    <img id="modalProfilePic" class="user-pic" src="" alt="">
+                    <div class="text">
+                        <a id="modalUsername" class="user-name" href=""></a>
+                        <p id="modalPostTime" class="post-time"></p>
+                    </div>
                 </div>
+                <form id="deleteForm" method="post" style="display:none;">
+                    {% csrf_token %}
+                    <button onclick="confirmDelete(event)">Delete</button>
+                </form>
             </div>
             <hr>
             <div class="caption-container">

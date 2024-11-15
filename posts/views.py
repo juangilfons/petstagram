@@ -40,3 +40,11 @@ def upload_post(request):
     else:
         form = PostForm()
     return render(request, 'posts/upload_post.html', {'form': form})
+
+@login_required
+def delete_post(request, post_id):
+    post = Post.objects.get(pk=post_id)
+    if request.method == 'POST':
+        post.delete()
+    return redirect('posts')
+

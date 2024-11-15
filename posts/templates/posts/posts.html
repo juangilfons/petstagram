@@ -26,7 +26,7 @@
                         </div>
                     </div>
                     <div class="actions">
-                        <a href="javascript:void(0);" onclick="openModal('{{ post.image.url }}', '{{ post.caption|escapejs }}','{{ post.user.username }}', '{{ post.user.userprofile.profile_picture.url }}', '{{ post.time_since_post|escapejs }}' )">
+                        <a href="javascript:void(0);" onclick="openModal('{{ post.pk }}', '{{ post.image.url }}', '{{ post.caption|escapejs }}','{{ post.user.username }}', '{{ post.user.userprofile.profile_picture.url }}', '{{ post.time_since_post|escapejs }}', '{{ user.username }}' )">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
                             <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
                         </svg>

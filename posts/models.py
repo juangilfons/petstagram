@@ -1,3 +1,4 @@
+import os
 from django.db import models
 from django.utils import timezone
 from datetime import timedelta
@@ -29,6 +30,12 @@ class Post(models.Model):
         else:
             days = time_diff.days
             return f"{days} days ago"
+
+    def delete(self, *args, **kwargs):
+        if self.image:
+            if os.path.isfile(self.image.path):
+                os.remove(self.image.path)
+        super().delete(*args, **kwargs)
 
     def __str__(self):
         return f"{self.user.username}'s Post"

@@ -91,14 +91,14 @@ p a:hover {
 .errorlist {
     display: block;
     list-style-type: none;
-    background-color: #f8d7da; /* Light red background */
-    border-left: 4px solid #f5c6cb; /* Red left border for emphasis */
-    padding: 10px 15px; /* Padding around the text */
-    border-radius: 5px; /* Slightly rounded corners */
-    margin-bottom: 30px; /* Margin to separate from other content */
-    font-size: 1.1rem; /* Slightly smaller font size */
+    background-color: #f8d7da;
+    border-left: 4px solid #f5c6cb;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
 }
 
 li {
-    color: #721c24; /* Dark red text */
+    color: #721c24;
 }

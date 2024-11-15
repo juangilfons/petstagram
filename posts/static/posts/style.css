@@ -5,7 +5,8 @@ main {
 }
 
 #posts {
-    width: 1600px;
+    width: 100%;
+    max-width: 1600px;
     list-style-type: none;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -15,8 +16,10 @@ main {
 }
 
 #posts .post-image {
-    height: 500px;
-    width: 500px;
+    height: 100%;
+    width: 100%;
+    max-width: 500px;
+    max-height: 500px;
     object-fit: cover;
 }
 
@@ -54,4 +57,17 @@ main {
     border-radius: 50%;
     height: 45px;
     width: 45px;
+}
+
+@media (max-width: 1700px) {
+    #posts {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 1100px;
+    }
+}
+
+@media (max-width: 1200px) {
+    #posts {
+        grid-template-columns: 1fr;
+    }
 }

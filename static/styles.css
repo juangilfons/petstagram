@@ -118,6 +118,7 @@ main {
     position: relative;
     display: inline-block;
     margin: 0;
+    width: 150px;
 }
 
 #navbar .dropdown-content {
@@ -148,6 +149,12 @@ main {
 
 #navbar .dropdown-content a:hover {
     background-color: #f1f1f1;
+}
+
+@media (max-width: 850px) {
+    #navbar .logo {
+        display: none;
+    }
 }
 
 
